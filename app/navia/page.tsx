@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 import { Form } from "@/components/ui/form";
 const fileSizeLimit = 20 * 1024 * 1024;
 
-export const formSchema = z.object({
+const formSchema = z.object({
   name: z.string().min(2, " نام خود را به درستی وارد کنید.").max(50),
   email: z.string().email(" ایمیل خود را به درستی وارد کنید."),
   major: z.string().min(2, " نام رشته خود را به درستی وارد کنید.").max(50),

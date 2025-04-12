@@ -11,7 +11,7 @@ import { Form } from "@/components/ui/form";
 import FifthStep from "./fifth-page";
 import SixthStep from "./sixth-page";
 
-export const formSchema = z.object({});
+const formSchema = z.object({});
 
 export default function NaviaVip() {
   const [step, setStep] = useState(5);
