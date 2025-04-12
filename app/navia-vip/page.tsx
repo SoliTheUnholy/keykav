@@ -13,19 +13,14 @@ import SixthStep from "./sixth-page";
 
 export const formSchema = z.object({});
 
-export default function Navia() {
+export default function NaviaVip() {
   const [step, setStep] = useState(5);
   const [animation, setAnimation] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      major: "",
-      university: "",
-    },
+    defaultValues: {},
   });
 
   function ChangeStep(step: number) {
