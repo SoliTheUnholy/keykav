@@ -277,7 +277,6 @@ const LetterGlitch = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [glitchSpeed, smooth]);
 
-
   const canvasStyle = {
     display: "block",
     width: "100%",
@@ -307,7 +306,7 @@ const LetterGlitch = ({
   };
 
   return (
-    <div className="relative z-40 bg-background h-screen w-screen overflow-hidden">
+    <div className="bg-background relative z-40 h-full min-h-svh w-screen overflow-hidden">
       <canvas ref={canvasRef} style={canvasStyle} />
       {outerVignette && (
         <div

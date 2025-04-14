@@ -119,14 +119,14 @@ const Page = () => {
   return (
     <div className="grid md:grid-cols-3">
       <Image
-        className="absolute -z-10 h-screen bg-cover opacity-50 blur-3xl md:relative"
+        className="absolute -z-10 h-full min-h-svh w-full bg-cover opacity-50 blur-3xl md:relative"
         height={1024}
         width={463}
         alt="gradient"
         //change it
         src={"/gradient.png"}
       ></Image>
-      <div className="grid h-screen items-center justify-center md:col-span-2">
+      <div className="grid h-full min-h-svh items-center justify-center md:col-span-2">
         <Form {...form}>
           <form className={`grid w-[90vw] max-w-90 gap-1`}>
             <Image
@@ -177,7 +177,7 @@ const Page = () => {
                     رمز یکبار مصرف
                   </FormLabel>
                   <FormMessage className="mx-auto" />
-                  <div className="flex justify-center gap-1">
+                  <div className="flex justify-center w-full gap-1">
                     <Button
                       disabled={!resend}
                       variant={"ghost"}
