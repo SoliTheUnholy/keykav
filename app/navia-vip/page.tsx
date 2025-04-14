@@ -15,7 +15,7 @@ import SixthStep2 from "./sixth-2-page";
 const formSchema = z.object({});
 
 export default function NaviaVip() {
-  const [step, setStep] = useState(6);
+  const [step, setStep] = useState(5);
   const [animation, setAnimation] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
