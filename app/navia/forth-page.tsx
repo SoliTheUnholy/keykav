@@ -75,7 +75,7 @@ const ForthStep = ({
           <GradientCard
             key={prof.id}
             onClick={() => setOpen(true)}
-            className={`${!visible.includes(index) && "blur-xs"} flex w-fit flex-col items-center gap-4 duration-500 ease-in-out hover:scale-105`}
+            className={`${!visible.includes(index) && "blur-xs"} flex w-fit flex-col items-center gap-4 duration-500 ease-in-out hover:scale-[1.025]`}
           >
             <Image
               alt="Random user"

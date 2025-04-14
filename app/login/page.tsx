@@ -156,6 +156,8 @@ const Page = () => {
                   <FormMessage className="mx-auto" />
                   <FormControl>
                     <Input
+                      autoFocus
+                      type="number"
                       className="h-10 rounded-md text-center placeholder:text-center"
                       placeholder="09xxxx1234"
                       {...field}

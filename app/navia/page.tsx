@@ -90,7 +90,7 @@ export default function Navia() {
   return (
     <>
       <BackgroundGradientAnimation />
-      <div className="relative z-20 flex h-full min-h-screen w-full flex-col items-center justify-between text-white">
+      <div className="relative z-20 flex h-full min-h-lvh w-full flex-col items-center justify-between text-white">
         <span className="h-34"></span>
         <div
           className={`${animation ? "animate-fade-out-left" : "animate-fade-in-right"} transition-all duration-500 ease-in-out`}
