@@ -60,7 +60,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" dir="rtl" suppressHydrationWarning>
-      <body className={`${Modam.className} antialiased`}>
+      <body className={`${Modam.className} antialiased overflow-x-hidden`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

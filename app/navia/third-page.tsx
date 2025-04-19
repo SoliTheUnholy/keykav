@@ -21,20 +21,7 @@ const ThirdStep = ({
 }) => {
   return (
     <div className={`grid gap-4`}>
-      {/* <div
-        className={`absolute top-0 left-0 -z-10 opacity-0 transition-all duration-1000 ${loading && "z-50 opacity-100"}`}
-      >
-        <p className="text-foreground absolute top-1/2 left-1/2 z-50 -translate-x-1/2 font-bold">
-          در حال بررسی بهترین موقعیت‌ها بر اساس رزومه شما
-        </p>
-        <LetterGlitch
-          glitchColors={["#9F5BE3", "#FFB163"]}
-          glitchSpeed={50}
-          centerVignette={true}
-          outerVignette={true}
-          smooth={true}
-        />
-      </div> */}
+
       <div className="grid gap-2 text-center">
         <h2 className="text-2xl text-foreground">رزومت رو چک کنیم؟</h2>
         <p className="text-muted-foreground max-w-[90vw]">

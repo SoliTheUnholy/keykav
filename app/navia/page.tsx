@@ -12,6 +12,7 @@ import ThirdStep from "@/app/navia/third-page";
 import ForthStep from "@/app/navia/forth-page";
 import { useRouter } from "next/navigation";
 import { Form } from "@/components/ui/form";
+import Loading from "./loading";
 const fileSizeLimit = 20 * 1024 * 1024;
 
 const formSchema = z.object({
@@ -35,6 +36,7 @@ const formSchema = z.object({
 export default function Navia() {
   const [step, setStep] = useState(1);
   const [profs, setProfs] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     fetch("https://dummyjson.com/users").then((res) =>
       res.json().then((list) => setProfs(list.users)),
@@ -62,6 +64,7 @@ export default function Navia() {
   }
 
   function setStepHandler(step: number) {
+    setError("");
     if (step == 3) {
       form.trigger("CV").then((isValid) => {
         if (isValid) {
@@ -74,10 +77,12 @@ export default function Navia() {
     } else if (step == 4) {
       form.trigger(["name", "email", "major", "university"]).then((isValid) => {
         if (isValid) {
-          //loading animation start
+          setLoading(true);
           //api call + use setProfs here
-          ChangeStep(step);
-          //loading animation stop
+          setTimeout(() => {
+            setStep(step);
+            setLoading(false);
+          }, 7000);
         }
       });
     } else if (step == 5) {
@@ -90,8 +95,13 @@ export default function Navia() {
   return (
     <>
       <BackgroundGradientAnimation />
+
       <div className="relative z-20 flex h-full min-h-svh w-full flex-col items-center justify-between text-white">
-        <span className="h-34"></span>
+        <div
+          className={`transition-all h-34 duration-1000 ${loading ? "z-50 opacity-100" : "-z-10 opacity-0"}`}
+        >
+          <Loading />
+        </div>
         <div
           className={`${animation ? "animate-fade-out-left" : "animate-fade-in-right"} transition-all duration-500 ease-in-out`}
         >
@@ -117,7 +127,7 @@ export default function Navia() {
         </div>
         {error && <p className="text-red-500">{error}</p>}
         <section
-          className={`grid w-72 gap-4 justify-self-start py-12 text-center transition-all duration-300 ease-in-out`}
+          className={`grid w-72 origin-bottom gap-4 justify-self-start py-12 text-center transition-all duration-300 ease-in-out ${loading && "scale-y-0"}`}
         >
           <p className="text-foreground text-sm">
             مرحله{" "}
