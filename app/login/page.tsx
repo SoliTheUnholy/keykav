@@ -128,12 +128,12 @@ const Page = () => {
       ></Image>
       <div className="grid h-full min-h-svh items-center justify-center md:col-span-2">
         <Form {...form}>
-          <form className={`grid w-[90vw] max-w-90 gap-1`}>
+          <form className={`relative grid w-[90vw] max-w-90 gap-1`}>
             <Image
               height={120}
               width={120}
               alt="logo"
-              className="absolute scale-0 rotate-90 justify-self-center transition-all duration-500 dark:scale-100 dark:rotate-0"
+              className="absolute top-0 right-1/2 translate-x-1/2 scale-0 rotate-90 justify-self-center transition-all duration-500 dark:scale-100 dark:rotate-0"
               src={"/logo.png"}
             ></Image>
             <Image
@@ -177,7 +177,7 @@ const Page = () => {
                     رمز یکبار مصرف
                   </FormLabel>
                   <FormMessage className="mx-auto" />
-                  <div className="flex justify-center w-full gap-1">
+                  <div className="flex w-full justify-center gap-1">
                     <Button
                       disabled={!resend}
                       variant={"ghost"}

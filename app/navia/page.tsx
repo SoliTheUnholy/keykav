@@ -95,17 +95,21 @@ export default function Navia() {
   return (
     <>
       <BackgroundGradientAnimation />
-
       <div className="relative z-20 flex h-full min-h-svh w-full flex-col items-center justify-between text-white">
         <div
-          className={`transition-all h-34 duration-1000 ${loading ? "z-50 opacity-100" : "-z-10 opacity-0"}`}
+          className={`h-34 transition-all duration-1000 ${loading ? "z-50 opacity-100" : "-z-10 opacity-0"}`}
         >
           <Loading />
         </div>
+
         <div
           className={`${animation ? "animate-fade-out-left" : "animate-fade-in-right"} transition-all duration-500 ease-in-out`}
         >
           <Form {...form}>
+            {error && (
+              <p className="mb-2 text-center text-sm text-red-500">{error}</p>
+            )}
+
             {step === 1 && <FirstStep setStep={setStepHandler} />}
             {step === 2 && (
               <SecondStep
@@ -125,7 +129,6 @@ export default function Navia() {
             )}
           </Form>
         </div>
-        {error && <p className="text-red-500">{error}</p>}
         <section
           className={`grid w-72 origin-bottom gap-4 justify-self-start py-12 text-center transition-all duration-300 ease-in-out ${loading && "scale-y-0"}`}
         >

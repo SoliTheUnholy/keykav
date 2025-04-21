@@ -347,6 +347,7 @@ export default function FifthStep({
 }: {
   setStep: (step: number) => void;
 }) {
+  const [error, setError] = useState("");
   const [selectedCountries, setSelectedCountries] = useState<
     Array<{
       value: string;
@@ -384,9 +385,18 @@ export default function FifthStep({
         <div className="bg-muted h-full w-full grow"></div>
         <Card className="bg-background grid w-fit gap-4 rounded-sm p-2 sm:p-4">
           <p className="text-right text-xl">انتخاب کشور</p>
+          {error ? (
+            selectedCountries.length == 0 ? (
+              <span className="text-sm text-red-500">{error}</span>
+            ) : (
+              ""
+            )
+          ) : (
+            ""
+          )}
           <MultiSelect
             options={countries}
-            className="w-[90vw] max-w-80"
+            className={`w-[90vw] max-w-80 ${error ? (selectedCountries.length == 0 ? "border-red-500" : "") : ""}`}
             onValueChange={setSelectedCountries}
             defaultValue={selectedCountries}
             placeholder="انتخاب کنید"
@@ -426,7 +436,13 @@ export default function FifthStep({
             </p>
           </div>
           <Button
-            onClick={() => setStep(6)}
+            onClick={() => {
+              if (selectedCountries.length > 0) {
+                setStep(6);
+              } else {
+                setError("حداقل یک کشور را انتخاب کنید.");
+              }
+            }}
             className="h-12"
             variant={"outline"}
           >

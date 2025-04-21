@@ -13,7 +13,7 @@ const Loading = () => {
           height={120}
           width={120}
           alt="logo"
-          className="absolute scale-0 rotate-90 animate-spin justify-self-center transition-all duration-500 dark:scale-100 dark:rotate-0"
+          className="absolute top-0 right-1/2 translate-x-1/2 scale-0 rotate-90 animate-spin justify-self-center transition-all duration-500 dark:scale-100 dark:rotate-0"
           src={"/logo.png"}
         ></Image>
         <Image
@@ -23,7 +23,7 @@ const Loading = () => {
           className="scale-100 rotate-0 animate-spin justify-self-center transition-all duration-500 dark:scale-0 dark:rotate-90"
           src={"/logo-black.png"}
         ></Image>
-        <p>در حال بررسی بهترین موقعیت‌ها بر اساس رزومه شما</p>
+        <p className="text-center">در حال بررسی بهترین موقعیت‌ها بر اساس رزومه شما</p>
       </div>
       <LetterGlitch
         glitchColors={["#9F5BE3", "#FFB163"]}

@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { motion } from "motion/react";
 import { useDropzone } from "react-dropzone";
 import { Input } from "./input";
+import { SquarePen } from "lucide-react";
 
 const mainVariant = {
   initial: {
@@ -89,6 +90,9 @@ export const FileUpload = ({
                     {file.name}
                   </motion.p>
                 </div>
+                <span className="text-sm flex items-center gap-2 mt-2 text-muted-foreground mx-auto hover:text-foreground"> 
+                  <SquarePen className="h-3 w-3"/>
+                  آپلود مجدد رزومه</span>
               </motion.div>
             )}
             {!file && (
